@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vuejs test</title>
+    <link href="styles.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="vue-app">
+        <h2>{{ name }}</h2>
+        <h1>{{ age }}</h1>
+        <h3>{{ greet('abdelrhman') }}</h3>
+        
+        <!-- to use any data in any attribute we need to bind that data first using v-bind:......-->
+        <a v-bind:href="link">google.com</a>
+        <input type="text" v-bind:value="inputValue">
+
+        <!-- we can bind a whole html tag link so-->
+        <p v-html="linkTag"></p>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
