@@ -10,8 +10,6 @@
 <body>
     <div id="vue-app">
         <h2>{{ name }}</h2>
-        <h1>{{ age }}</h1>
-        <h3>{{ greet('abdelrhman') }}</h3>
         
         <!-- to use any data in any attribute we need to bind that data first using v-bind:......-->
         <a v-bind:href="link">google.com</a>
@@ -19,6 +17,19 @@
 
         <!-- we can bind a whole html tag link so-->
         <p v-html="linkTag"></p>
+
+        <!-- events -->
+        <p>my age is {{ age }}</p>
+        <!-- on the button we need to add a lister to the certain event-->
+        <button v-on:click = "addAge(1)">add a year</button>
+        <button v-on:click = "subAge(1)">remove a year</button>
+        <button v-on:dblclick = "addAge(100)">add a 100 years to age</button>
+        <button v-on:dblclick = "subAge(100)">subtract a 100 years from age</button>
+
+        <!-- some more events -->
+        <div id="canvas" v-on:mousemove = "updateXY()">
+            {{x}}, {{y}}
+        </div>
     </div>
 
     <script src="app.js"></script>
