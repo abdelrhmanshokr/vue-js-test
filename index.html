@@ -21,15 +21,52 @@
         <!-- events -->
         <p>my age is {{ age }}</p>
         <!-- on the button we need to add a lister to the certain event-->
-        <button v-on:click = "addAge(1)">add a year</button>
+        <button v-on:click.once = "addAge(1)">add a year</button>
         <button v-on:click = "subAge(1)">remove a year</button>
-        <button v-on:dblclick = "addAge(100)">add a 100 years to age</button>
-        <button v-on:dblclick = "subAge(100)">subtract a 100 years from age</button>
+        <button v-on:dblclick = "addAge(100)">add a 100 years to age with a double click</button>
+        <button v-on:dblclick = "subAge(100)">subtract a 100 years from age with a double click</button>
 
         <!-- some more events -->
-        <div id="canvas" v-on:mousemove = "updateXY()">
+        <div id="canvas" v-on:click = "updateXY()">
             {{x}}, {{y}}
         </div>
+
+        <!-- keyboard events -->
+        <lable>name</lable>
+        <!-- adding a two way data binding this input will write to the variable name directly using v-model -->
+        <input id="name" type="text" v-on:keyup.tab = "logName()" v-model = "name">
+        <spam>{{name}}</spam>
+        
+        <label>age</label>
+        <input id="age" type="text" v-on:keyup.alt.enter = "logAge()" v-model = "age">
+        <spam>{{age}}</spam>
+
+        <!--dynamic CSS-->
+        <h1>example one</h1>
+        <div v-on:click = "availableInverse()" v-bind:class="{available: available}">
+            <span>abdelrhman</span>
+        </div>
+
+        <!-- conditionals: showing a certin content if a condition was met -->
+        <button v-on:click="error = !error">toggle error</button>
+        <button v-on:click="success = !success">toggle success</button>
+        <p v-if="error">this has an error</p>
+        <p v-else-if="success">this has an success</p>
+
+        <!-- for loops using v-for -->
+        <h1>looping in data</h1>
+        <ul>
+            <li v-for="char in chars">{{char}}</li>
+            <li>--------------</li>
+            <li v-for="ninja in ninjas"> {{ninja.name}} - {{ninja.age}}</li>
+        </ul>
+        <!-- what if we want to loop in the object itself -->
+        <template v-for="ninja in ninjas">
+            <div v-for="(val,key) in ninja">
+                <p>{{key}} - {{val}}</p>
+            </div>
+        </template>
+    
     </div>
 
     <script src="app.js"></script>

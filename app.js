@@ -4,7 +4,7 @@ new Vue({
     el: '#vue-app',
     //the second proprety is the data which tells the instanse what to output 
     data: {
-        name: 'name',
+        name: '',
         
         //this link is used in the href attribute in a link so we need to bind it to take its value in the html page as shown in the html page 
         link: 'https://www.google.com',
@@ -14,9 +14,26 @@ new Vue({
         linkTag: '<a href="https://www.google.com"> google.com </a>',
 
         //events data 
-        age: 22,
+        age: '',
         x: 0,
-        y: 0
+        y: 0,
+
+        //dynamic CSS data 
+        available: true,
+        nearby: false,
+
+        //conditionals data
+        error: false,
+        success: false,
+        
+        //v-for data
+        chars: ['abdelrhman', 'shokr', 'adel', 'diaa'],
+        ninjas: [
+            {name: 'abdelrhman', age: 22},
+            {name: 'shokr', age: 25},
+            {name: 'adel', age: 60}
+        ]
+
     },
     //we can add methods to any element also 
     //the arrow function does not support this notation
@@ -33,9 +50,26 @@ new Vue({
             this.age -= dec;
         },
 
-        updateXY: function(event){ //when we create a new event we get an event object automatically called event
+        updateXandY: function(event){ 
+            //when we create a new event we get an event object automatically called event
             this.x = event.offsetX;
             this.y = event.offsetY;
+        },
+
+        //keyboard events
+        logName: function(){
+            console.log('name')
+        },
+        logAge: function(){
+            console.log('age')
+        },
+
+        //dynamic CSS methods 
+        availableInverse: function(){
+            this.available = !this.available;
         }
+        
+        //v-for mehtods 
+        
     }
 });

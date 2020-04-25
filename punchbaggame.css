@@ -1,0 +1,31 @@
+#bagImage{
+    width: 200px;
+    height: 500px;
+    margin: 0 auto;
+    background: url(/img/bag.png) center no-repeat;
+    background-size: 80%;
+}
+
+#bagImage.burst{
+    width: 200px;
+    height: 500px;
+    margin: 0 auto;
+    background: url(/img/bag-burst.png) center no-repeat;
+    background-size: 80%;
+}
+
+#bagHealth{
+    width: 200px;
+    border: 5px solid #000;
+    margin: 0 auto 20 auto;
+}
+
+#bagHealth div{
+    height: 20px;
+    background: red;
+}
+
+#gamebuttons{
+    width: 130px;
+    margin: 0 auto;
+}
