@@ -20,6 +20,15 @@
         <button v-on:click="changeAppOnTitle()">change app one title</button>
     </div>
 
+    <!-- referencing -->
+    <div id="ref">
+        <h2>refs</h2>
+        <h2>enter your name</h2>
+        <input type="text" ref="input">
+        <button  v-on:click="readRefs()">submit</button>
+        <p>your name is {{output}}</p>    
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>

@@ -55,4 +55,20 @@ let two = new Vue({
             return 'hello from app two';
         }
     }
-})
+});
+
+
+let ref = new Vue({
+    el: '#ref',
+
+    data:{
+        output: ''
+    },
+
+    methods:{
+        readRefs: function(){
+            console.log(this.$refs.input.value);
+            this.output = this.$refs.input.value;
+        }
+    }
+});
